@@ -1,0 +1,9 @@
+#!/bin/bash
+
+#echo "Running rover..."
+#exec > history.txt
+echo $(date +%m/%d/%y" - "%T)" | running rover"
+stty -echo
+python3 code/main.py
+stty echo
+
