@@ -63,9 +63,9 @@ def right():
 
 
 def update():
-    print(f"->{cache.stack}<-")
+    # print(f"->{cache.stack}<-")
     current_state = cache.get_state()
-    print(f"current_state: {current_state}")
+    # print(f"current_state: {current_state}")
     wheels = {
         "front_right": current_state.front_right,
         "back_right": current_state.back_right,
