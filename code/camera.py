@@ -12,6 +12,7 @@ def initialize():
         gopro.KeepAlive()
         return True
     except Exception:
+        print("ERROR: GoPro failed to initialize")
         return False
 
 
@@ -20,6 +21,7 @@ def shut_down():
         gopro.power_off()
         return True
     except Exception:
+        print("WARN: GoPro failed to shutdown expectedly")
         return False
 
 
@@ -28,6 +30,7 @@ def take_photo():
         gopro.take_photo()
         return True
     except Exception:
+        print("ERROR: GoPro could not be reached")
         return False
 
 
@@ -36,6 +39,7 @@ def take_video():
         gopro.shoot_video()
         return True
     except Exception:
+        print("ERROR: GoPro could not be reached")
         return False
 
 
@@ -45,6 +49,7 @@ def save_last():
         gopro.downloadLastMedia("pic.JPG")
         return True
     except Exception:
+        print("ERROR: last media could not be transferred")
         return False
 
 
