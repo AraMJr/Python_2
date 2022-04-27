@@ -1,10 +1,9 @@
 import RPi.GPIO as GPIO
+# from EmulatorGUI import GPIO
 import state as state
 import cache as c
 import time
 
-
-# TODO: implement GPIO controls
 
 cache = c.Cache()
 
@@ -84,7 +83,7 @@ def update():
 
         
 if __name__ == '__main__':
-    toggle_mode(0, 0) # emergency kill switch
+    toggle_mode(0, 0)   # emergency kill switch
     
 
 
