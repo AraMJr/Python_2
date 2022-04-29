@@ -1,5 +1,6 @@
 import command as commands
 import execute as execute
+import valid as valid
 import pygame
 # import camera
 
@@ -19,16 +20,26 @@ def run_rover():
     while True:
         for event in pygame.event.get():
             output = None
-            if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == ord("p")):
+            if event.type == pygame.QUIT \
+                    or (event.type == pygame.KEYDOWN and event.key == ord("p"))\
+                    or (event.type == pygame.KEYDOWN and valid.translate(event.key) == 200):
                 print()
                 exit(0)
             elif event.type == pygame.KEYDOWN:
-                # print(event.key)
-                command = commands.Command(event.key)
+                special = valid.translate(event.key)
+                # print(special)
+                if special is None:
+                    command = commands.Command(event.key)
+                else:
+                    command = commands.Command(special)
                 print(f"{command} pressed")
                 output = execute.execute(command)
             elif event.type == pygame.KEYUP:
-                command = commands.Command(event.key)
+                special = valid.translate(event.key)
+                if special is None:
+                    command = commands.Command(event.key)
+                else:
+                    command = commands.Command(special)
                 print(f"{command} depressed")
                 output = execute.execute(command)
             if output is not None:
@@ -36,7 +47,10 @@ def run_rover():
 
 
 if __name__ == "__main__":
-    # initialize()
-    run_rover()
+    try:
+        # initialize()
+        run_rover()
+    except KeyboardInterrupt:
+        print("force quit program")
 
 

@@ -1,6 +1,7 @@
 from datetime import datetime
 import valid as valid
 import test as test
+import pygame
 
 
 class Command:
@@ -30,8 +31,8 @@ class Command:
 
 def translate(input_integer):
     translation = {
-        1073742049: "shift",
-        1073741881: "caps",
+        9: "tab",
+        10: "shift",
         32: "space"
     }
     return translation.get(input_integer)
@@ -40,9 +41,14 @@ def translate(input_integer):
 def parse_command(input_integer):
     # checks if command string correlates with recognized command, if so, returns command, else returns None
     special_key = translate(input_integer)
-    try:
-        return valid.commands(chr(input_integer))
-    except ValueError:
+    if special_key is None:
+        try:
+            return valid.commands(chr(input_integer))
+        except ValueError:
+            # print(input_integer, special_key)
+            return valid.commands(special_key)
+    else:
+        # print(input_integer, special_key)
         return valid.commands(special_key)
 
 
