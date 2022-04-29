@@ -20,9 +20,7 @@ def run_rover():
     while True:
         for event in pygame.event.get():
             output = None
-            if event.type == pygame.QUIT \
-                    or (event.type == pygame.KEYDOWN and event.key == ord("p"))\
-                    or (event.type == pygame.KEYDOWN and valid.translate(event.key) == 200):
+            if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == ord("p")):
                 print()
                 exit(0)
             elif event.type == pygame.KEYDOWN:
@@ -48,7 +46,7 @@ def run_rover():
 
 if __name__ == "__main__":
     try:
-        # initialize()
+        # camera.initialize()
         run_rover()
     except KeyboardInterrupt:
         print("force quit program")
