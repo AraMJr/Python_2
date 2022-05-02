@@ -10,9 +10,11 @@ import pygame
 
 
 def run_rover():
+    pygame.font.init()
     background_color = (255, 255, 255)
     background_image = pygame.image.load('images/republic2.jpg')
     screen = pygame.display.set_mode((820, 680))
+    execute.screen = screen
     pygame.display.set_caption('rover')
     screen.fill(background_color)
     screen.blit(background_image, [0, 0])

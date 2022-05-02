@@ -6,7 +6,7 @@ import pygame
 
 class Command:
     # accepts a string as an argument, will autofill a timestamp and parse a command from inputted string
-    def __init__(self, input_integer: int):
+    def __init__(self, input_integer: int, argument: str = None):
         self.timestamp = datetime.now()
         self.input_integer = input_integer
         self.command = parse_command(input_integer)

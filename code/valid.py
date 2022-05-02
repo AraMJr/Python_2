@@ -14,7 +14,6 @@ def translate(key) -> int:
 
 # checks if command string is recognized and returns it if so, otherwise returns None
 def commands(input_string):
-    # TODO: finalize valid commands and keys
     valid_commands = {
         "w": "forward",
         "s": "backward",
@@ -29,6 +28,8 @@ def commands(input_string):
         "shift": "brake",
         "i": "display",
         "space": "display",
+        "1": "display",
+        "2": "display"
     }
     try:
         return valid_commands.get(input_string)
