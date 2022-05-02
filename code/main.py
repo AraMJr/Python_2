@@ -12,7 +12,8 @@ import pygame
 def run_rover():
     pygame.font.init()
     background_color = (255, 255, 255)
-    background_image = pygame.image.load('images/republic2.jpg')
+    background_image = pygame.image.load('/home/pi/Code/egen-310-rover/images/republic2.jpg')
+    # background_image = pygame.image.load('images/republic2.jpg')
     screen = pygame.display.set_mode((820, 680))
     execute.screen = screen
     pygame.display.set_caption('rover')
