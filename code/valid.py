@@ -29,7 +29,9 @@ def commands(input_string):
         "i": "display",
         "space": "display",
         "1": "display",
-        "2": "display"
+        "2": "display",
+        "3": "display",
+        "4": "display"
     }
     try:
         return valid_commands.get(input_string)
