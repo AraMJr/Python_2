@@ -66,8 +66,10 @@ def display(command: commands.Command = None):
     screen.fill(background_color)
     screen.blit(background_image, [0, 0])
     messages = {
-        "1": "Keep calm: help is on the way",
-        "2": "Take deep breaths"
+        "1": "Galactic Republic Rescue",
+        "2": "Take deep breaths",
+        "3": "Keep calm: help is on the way",
+        "4": "Send the SpyKids"
     }
     try:
         message = messages.get(str(chr(command.input_integer)))
